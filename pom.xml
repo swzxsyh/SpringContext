@@ -91,6 +91,14 @@
         <!--            <optional>true</optional>-->
         <!--            <version>2.7.2</version>-->
         <!--        </dependency>-->
+
+        <!-- 字符串转化可执行代码公式 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-jexl3</artifactId>
+            <version>3.1</version>
+        </dependency>
+
     </dependencies>
 
 
