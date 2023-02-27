@@ -1,4 +1,4 @@
-package com.test;
+package com.test.onlyTest;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.jexl3.*;
@@ -85,7 +85,7 @@ public class JexlTest {
     public void wrongFormulaTest() {
         // 异常公式，转化时会报错，可在存储时先运行转换检查
         String Error_Formula = "(a+b";
-        //org.apache.commons.jexl3.JexlException$Parsing: com.test.JexlTest.wrongFormulaTest@1:4 parsing error in ''
+        //org.apache.commons.jexl3.JexlException$Parsing: com.test.onlyTest.JexlTest.wrongFormulaTest@1:4 parsing error in ''
         JexlExpression expression = getInstance().createExpression(Error_Formula);
     }
 
@@ -102,7 +102,7 @@ public class JexlTest {
         INPUT_MAP.put("difference", "8");
         INPUT_MAP.put("cost", "");
         //可以输入时直接判断参数数量，减少运算
-        //org.apache.commons.jexl3.JexlException$Variable: com.test.JexlTest.convertToCode@1:15 undefined variable excepted
+        //org.apache.commons.jexl3.JexlException$Variable: com.test.onlyTest.JexlTest.convertToCode@1:15 undefined variable excepted
         Object result2 = convertToCode(formula, INPUT_MAP);
     }
 }

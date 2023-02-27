@@ -1,4 +1,4 @@
-package com.test;
+package com.test.onlyTest;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -16,8 +16,8 @@ public class IOFileCopyTest {
      */
     @Test
     public void fileIOStreamTest() {
-        try (FileInputStream fis = new FileInputStream("./src/test/java/com/test/source.text");
-             FileOutputStream fos = new FileOutputStream("./src/test/java/com/test/target.text")) {
+        try (FileInputStream fis = new FileInputStream("./src/test/onlyTest/java/com/test/onlyTest/source.text");
+             FileOutputStream fos = new FileOutputStream("./src/test/onlyTest/java/com/test/onlyTest/target.text")) {
 
             int content;
             StringBuilder sb = new StringBuilder();
@@ -42,8 +42,8 @@ public class IOFileCopyTest {
      */
     @Test
     public void fileReaderTest() {
-        try (FileReader fr = new FileReader("./src/test/java/com/test/source.text");
-             FileWriter fw = new FileWriter("./src/test/java/com/test/target.text")) {
+        try (FileReader fr = new FileReader("./src/test/onlyTest/java/com/test/onlyTest/source.text");
+             FileWriter fw = new FileWriter("./src/test/onlyTest/java/com/test/onlyTest/target.text")) {
             int content;
             StringBuilder sb = new StringBuilder();
             while ((content = fr.read()) != -1) {
@@ -64,8 +64,8 @@ public class IOFileCopyTest {
      */
     @Test
     public void fileBufferTest() {
-        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("./src/test/java/com/test/source.text"));
-             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("./src/test/java/com/test/target.text"))) {
+        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("./src/test/onlyTest/java/com/test/onlyTest/source.text"));
+             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("./src/test/onlyTest/java/com/test/onlyTest/target.text"))) {
             int length;
             byte[] bytes = new byte[4 * 1024];
 
@@ -86,8 +86,8 @@ public class IOFileCopyTest {
      */
     @Test
     public void fileTransferTest() {
-        try (FileInputStream fis = new FileInputStream("./src/test/java/com/test/source.text");
-             FileOutputStream fos = new FileOutputStream("./src/test/java/com/test/target.text")) {
+        try (FileInputStream fis = new FileInputStream("./src/test/onlyTest/java/com/test/onlyTest/source.text");
+             FileOutputStream fos = new FileOutputStream("./src/test/onlyTest/java/com/test/onlyTest/target.text")) {
             final FileChannel fisChannel = fis.getChannel();
             final FileChannel fosChannel = fos.getChannel();
 
