@@ -117,4 +117,42 @@ public class BaseStructureTest {
                 (Integer.parseInt(ip[2]) << 8) | Integer.parseInt(ip[3]);
         log.info("result: {}", result);
     }
+
+    @Test
+    public void unInitStringTest() {
+        //java: variable source might not have been initialized
+        //String source;
+        String source = "abc";
+        log.info("source: {}", source);
+    }
+
+    /**
+     * 字符串测试，String最好不用==比较，容易出现常量池比较堆数据问题，即使字符串相同，地址却并不同，导致不相等
+     * compareTo() 比较ASCII码，相等返回 0，前比后小 <0 ,前比后大 >0
+     */
+    @Test
+    public void equalsTest() {
+        //堆
+        String s1 = new String("abc");
+        //常量池
+        String s2 = "abc";
+        //常量池，大概是优化，生成的内容进入常量池
+        String s3 = "ab" + "c";
+        //常量池
+        String s4 = "abc";
+        //堆, 通过char[]生成新对象
+        String s5 = "ab".concat("c");
+
+        log.info("s1.compareTo(s3) result: {}", s1.compareTo(s3));
+
+        log.info("s1 == s2 result: {}", s1 == s2);
+        log.info("s1 equals s2 result: {}", s1.equals(s2));
+        log.info("s2 == s3 result: {}", s2 == s3);
+
+        log.info("s2 == s4 result: {}", s2 == s4);
+
+        log.info("s1 == s3 result: {}", s1 == s3);
+
+        log.info("s2 == s5 result: {}", s2 == s5);
+    }
 }

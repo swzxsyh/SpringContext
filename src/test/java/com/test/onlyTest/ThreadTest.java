@@ -105,4 +105,19 @@ public class ThreadTest {
         }
     }
 
+
+    /**
+     * 线程执行顺序测试
+     * <p>
+     * 这个考察的实际上应该是run()方法调用顺序，如果是start()则新建线程，run()方法则使用当前线程顺序执行，因此pong ping
+     */
+    @Test
+    public void orderTest() {
+        new Thread(ThreadTest::pong).run();
+        System.out.println("ping");
+    }
+
+    static void pong() {
+        System.out.println("pong");
+    }
 }
