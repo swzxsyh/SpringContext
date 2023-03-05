@@ -99,6 +99,14 @@
             <version>3.1</version>
         </dependency>
 
+        <!-- 测试本地缓存, JDK 8不支持3以上的版本使用 -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>2.9.3</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
 
