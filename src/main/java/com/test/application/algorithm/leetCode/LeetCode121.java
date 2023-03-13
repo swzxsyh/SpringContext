@@ -13,16 +13,7 @@ package com.test.application.algorithm.leetCode;
  */
 public class LeetCode121 {
 
-
-    public static void main(String[] args) {
-//        int[] prices = {7,1,5,3,6,4};
-        int[] prices = {7, 6, 4, 3, 1};
-        int result = maxProfit(prices);
-        System.out.println("last price:" + result);
-    }
-
-
-    public static int maxProfit(int[] prices) {
+    public int maxProfit(int[] prices) {
 
         int minPrice = prices[0];
         int maxProfit = 0;

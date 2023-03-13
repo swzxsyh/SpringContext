@@ -1,7 +1,6 @@
 package com.test.application.algorithm.leetCode;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -11,14 +10,6 @@ import java.util.stream.Collectors;
  */
 public class LeetCode179 {
 
-    public static void main(String[] args) {
-//        int[] nums = {10, 2};
-        int[] nums = {3, 30, 34, 5, 9};
-
-        String result = new LeetCode179().largestNumber(nums);
-
-        System.out.println("result: " + result);
-    }
 
     public String largestNumber(int[] nums) {
         StringBuilder sb = new StringBuilder();

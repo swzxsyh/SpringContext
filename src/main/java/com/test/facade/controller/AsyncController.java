@@ -2,6 +2,7 @@ package com.test.facade.controller;
 
 import com.test.ioc.aop.use.cglib.log.LogAdvice;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.web.bind.annotation.GetMapping;

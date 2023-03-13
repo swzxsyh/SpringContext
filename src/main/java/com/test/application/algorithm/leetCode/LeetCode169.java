@@ -14,13 +14,6 @@ import java.util.Map;
  */
 public class LeetCode169 {
 
-    public static void main(String[] args) {
-        int[] nums = {3, 2, 3};
-//        int[] nums = {2,2,1,1,1,2,2};
-        int result = new LeetCode169().majorityElement(nums);
-        System.out.println("result:" + result);
-    }
-
     public int majorityElement(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {

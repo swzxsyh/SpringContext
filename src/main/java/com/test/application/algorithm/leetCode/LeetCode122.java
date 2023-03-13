@@ -1,6 +1,5 @@
 package com.test.application.algorithm.leetCode;
 
-
 /**
  * 给你一个整数数组 prices ，其中prices[i] 表示某支股票第 i 天的价格。
  * <p>
@@ -16,18 +15,9 @@ package com.test.application.algorithm.leetCode;
  */
 public class LeetCode122 {
 
-    public static void main(String[] args) {
-//        int[] prices = {7, 1, 5, 3, 6, 4};
-//        int[] prices = {1, 2, 3, 4, 5};
-        int[] prices = {7, 6, 4, 3, 1};
-        int result = maxProfit(prices);
-        System.out.println("max profit: " + result);
-    }
-
-    public static int maxProfit(int[] prices) {
+    public int maxProfit(int[] prices) {
         int maxProfit = 0;
         int currentProfit;
-
 
         for (int i = 0; i < prices.length; i++) {
             if (i + 1 < prices.length && prices[i] < prices[i + 1]) {
@@ -37,7 +27,6 @@ public class LeetCode122 {
                 maxProfit += currentProfit;
             }
         }
-
 
         return maxProfit;
     }

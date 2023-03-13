@@ -1,7 +1,5 @@
 package com.test.application.algorithm.leetCode;
 
-import java.util.Arrays;
-
 /**
  * 给你两个版本号 version1 和 version2 ，请你比较它们。
  * <p>
@@ -20,17 +18,6 @@ import java.util.Arrays;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class LeetCode165 {
-
-
-    public static void main(String[] args) {
-        String version1 = "1.01",version2 = "1.001";
-//        String version1 = "1.0", version2 = "1.0.0";
-//        String version1 = "0.1", version2 = "1.1";
-//        String version1 = "1", version2 = "1.0";
-//        String version1 = "1.05", version2 = "1.1";
-        int result = new LeetCode165().compareVersion(version1, version2);
-        System.out.println("result:" + result);
-    }
 
     public int compareVersion(String version1, String version2) {
         String[] splitV1 = version1.split("\\.");

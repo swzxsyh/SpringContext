@@ -1,9 +1,6 @@
 package com.test.application.algorithm.leetCode;
 
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Alice 有 n 枚糖，其中第 i 枚糖的类型为 candyType[i] 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。
@@ -17,16 +14,6 @@ import java.util.stream.Collectors;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class LeetCode575 {
-
-    public static void main(String[] args) {
-//        int[] candyType = {1, 1, 2, 2, 3, 3};
-//        int[] candyType = {1, 1, 2, 3};
-        int[] candyType = {6, 6, 6, 6};
-
-        int result = new LeetCode575().distributeCandies(candyType);
-        System.out.println("result: " + result);
-
-    }
 
     public int distributeCandies(int[] candyType) {
         int count = candyType.length / 2;
