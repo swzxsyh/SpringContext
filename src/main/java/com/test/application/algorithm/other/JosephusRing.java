@@ -12,9 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JosephusRing {
 
-    public int solution(int n, int firstNumber) {
-        // 在这⾥写代码
-
-        return n / 2;
+    public int oppositePerson(int n, int firstNumber) {
+        return (firstNumber + n / 2) % n;
     }
 }

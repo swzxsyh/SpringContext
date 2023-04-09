@@ -9,7 +9,7 @@ public class JosephusRingTest {
     @Test
     public void ringTest() {
         int n = 10, firstNumber = 2;
-        final int solution = new JosephusRing().solution(n, firstNumber);
+        final int solution = new JosephusRing().oppositePerson(n, firstNumber);
         log.info("result: {}", solution);
     }
 }

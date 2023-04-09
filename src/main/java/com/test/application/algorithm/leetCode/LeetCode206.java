@@ -8,21 +8,16 @@ import com.test.application.algorithm.ListNode;
 public class LeetCode206 {
 
     public static void main(String[] args) {
-        //TODO
-        int[] nums = {1,2,3,4,5};
+        int[] nums = {1, 2, 3, 4, 5};
 
-        ListNode head = new ListNode(0);
-        ListNode nextNode;
-        nextNode = head;
+        ListNode head = new ListNode(nums[0]);
+        ListNode current = head;
 
-        for (int i = 0; i < nums.length; i++) {
-            ListNode node = new ListNode(i);
-            nextNode.next = node;
-            nextNode = nextNode.next;
+        for (int i = 1; i < nums.length; i++) {
+            ListNode node = new ListNode(nums[i]);
+            current.next = node;
+            current = node;
         }
-
-        nextNode = head;
-        System.out.println(nextNode);
         System.out.println(head);
 
 
@@ -31,10 +26,20 @@ public class LeetCode206 {
     }
 
     public ListNode reverseList(ListNode head) {
-        ListNode result = null;
+        //始终保存反向节链表中的前一个节点
+        ListNode prev = null;
 
-
-        return result;
+        //not end
+        while (head != null) {
+            ListNode next = head.next;
+            //set key as last key
+            head.next = prev;
+            //null = head{}
+            prev = head;
+            //head{5} = head{4}
+            head = next;
+        }
+        return prev;
     }
 
 }

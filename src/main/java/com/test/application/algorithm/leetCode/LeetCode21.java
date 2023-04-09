@@ -10,40 +10,56 @@ public class LeetCode21 {
     public static void main(String[] args) {
         //l1 = [1,2,4], l2 = [1,3,4]
         int[] array1 = {1, 2, 4};
-        int[] array2 = {1, 3, 4};
+        int[] array2 = {1, 3, 5};
+        final LeetCode21 cls = new LeetCode21();
+        ListNode l1 = cls.buildParams(array1);
+        ListNode l2 = cls.buildParams(array2);
+
+        System.out.println(l1);
+        System.out.println(l2);
 
 
-        ListNode head = new ListNode(0);
-
-        ListNode l1 = head;
-
-        for (int j : array1) {
-            l1.next = new ListNode(j);
-            l1 = l1.next;
-        }
-        l1 = head.next;
-
-        ListNode head2 = new ListNode(0);
-        ListNode l2 = head2;
-        for (int i : array2) {
-            l2.next = new ListNode(i);
-            l2 = l2.next;
-        }
-        l2 = head2.next;
-
-        ListNode result = new LeetCode21().mergeTwoLists(l1, l2);
+        ListNode result = cls.mergeTwoLists(l1, l2);
         System.out.println("result: " + result);
 
 
     }
 
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if (list1.next != null && list2 != null) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode dummyHead = new ListNode(0);
+        ListNode currentNode = dummyHead;
 
-
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                currentNode.next = l1;
+                l1 = l1.next;
+            } else {
+                currentNode.next = l2;
+                l2 = l2.next;
+            }
+            currentNode = currentNode.next;
         }
 
+        if (l1 != null) {
+            currentNode.next = l1;
+        }
 
-        return list1;
+        if (l2 != null) {
+            currentNode.next = l2;
+        }
+
+        return dummyHead.next;
+    }
+
+
+    private ListNode buildParams(int[] array) {
+        ListNode head = new ListNode(array[0]);
+        ListNode current = head;
+        for (int i = 1; i < array.length; i++) {
+            ListNode node = new ListNode(array[i]);
+            current.next = node;
+            current = node;
+        }
+        return head;
     }
 }
